@@ -81,7 +81,8 @@ public abstract class CompoundDrawableTouchListener implements View.OnTouchListe
      * @return {@link Rect} with relative bounds
      */
     private Rect getRelativeBounds(int index, @NonNull Drawable drawable, View view) {
-        final Rect bounds = drawable.getBounds();
+        final Rect drawableBounds = drawable.getBounds();
+        final Rect bounds = new Rect(drawableBounds);
 
         switch (index) {
             case LEFT:
