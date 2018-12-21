@@ -1,4 +1,4 @@
-package cc.brainbook.compounddrawable;
+package cc.brainbook.compounddrawabledemo;
 
 import android.graphics.Rect;
 import android.view.MotionEvent;

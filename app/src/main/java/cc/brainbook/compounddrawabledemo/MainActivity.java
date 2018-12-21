@@ -1,4 +1,4 @@
-package cc.brainbook.compounddrawable;
+package cc.brainbook.compounddrawabledemo;
 
 import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;

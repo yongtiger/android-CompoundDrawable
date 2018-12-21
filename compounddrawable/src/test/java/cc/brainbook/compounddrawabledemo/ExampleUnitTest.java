@@ -1,4 +1,4 @@
-package cc.brainbook.compounddrawable;
+package cc.brainbook.compounddrawabledemo;
 
 import org.junit.Test;
 
