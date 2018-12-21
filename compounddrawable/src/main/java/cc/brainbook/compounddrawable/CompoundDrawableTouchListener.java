@@ -1,4 +1,4 @@
-package cc.brainbook.compounddrawabledemo;
+package cc.brainbook.compounddrawable;
 
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;

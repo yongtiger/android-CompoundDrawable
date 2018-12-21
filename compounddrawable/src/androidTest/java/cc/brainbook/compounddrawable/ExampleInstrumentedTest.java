@@ -1,4 +1,4 @@
-package cc.brainbook.compounddrawabledemo;
+package cc.brainbook.compounddrawable;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
