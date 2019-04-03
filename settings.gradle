@@ -1,1 +1,1 @@
-include ':app', ':compounddrawable'
+include ':compounddrawable', ':app'
