@@ -12,7 +12,6 @@ import android.widget.TextView;
  * Will intercept every event that happened inside (calculated) compound drawable bounds, extended by fuzz.
  *
  * https://gist.github.com/amaksoft/dbfb0fa827619dcb64b6a587efde34d9
- * https://code.i-harness.com/en/q/363c49
  */
 @SuppressWarnings("WeakerAccess")
 public abstract class CompoundDrawableTouchListener implements View.OnTouchListener {
@@ -42,7 +41,8 @@ public abstract class CompoundDrawableTouchListener implements View.OnTouchListe
     }
 
     @Override
-    public boolean onTouch(View view, MotionEvent event) {
+    public boolean onTouch(@NonNull View view, MotionEvent event) {
+        view.performClick();
         if (!(view instanceof TextView)) {
             return false;
         }
@@ -59,18 +59,19 @@ public abstract class CompoundDrawableTouchListener implements View.OnTouchListe
 
             if (fuzzedBounds.contains(x, y)) {
                 final MotionEvent relativeEvent = MotionEvent.obtain(
-                    event.getDownTime(),
-                    event.getEventTime(),
-                    event.getAction(),
-                    event.getX() - bounds.left,
-                    event.getY() - bounds.top,
-                    event.getMetaState());
+                        event.getDownTime(),
+                        event.getEventTime(),
+                        event.getAction(),
+                        event.getX() - bounds.left,
+                        event.getY() - bounds.top,
+                        event.getMetaState());
                 return onDrawableTouch(view, i, bounds, relativeEvent);
             }
         }
 
         return false;
     }
+
 
     /**
      * Calculates compound drawable bounds relative to wrapping view
@@ -80,6 +81,7 @@ public abstract class CompoundDrawableTouchListener implements View.OnTouchListe
      * @param view wrapping view
      * @return {@link Rect} with relative bounds
      */
+    @NonNull
     private Rect getRelativeBounds(int index, @NonNull Drawable drawable, View view) {
         final Rect drawableBounds = drawable.getBounds();
         final Rect bounds = new Rect(drawableBounds);
@@ -115,7 +117,8 @@ public abstract class CompoundDrawableTouchListener implements View.OnTouchListe
      * @param source given {@link Rect}
      * @return result {@link Rect}
      */
-    private Rect addFuzz(Rect source) {
+    @NonNull
+    private Rect addFuzz(@NonNull Rect source) {
         final Rect result = new Rect();
         result.left = source.left - fuzz;
         result.right = source.right + fuzz;
@@ -133,4 +136,5 @@ public abstract class CompoundDrawableTouchListener implements View.OnTouchListe
      * @param event event with coordinated relative to wrapping view - i.e. within {@code drawableBounds}. If using fuzz, may return negative coordinates.
      */
     protected abstract boolean onDrawableTouch(View v, int drawableIndex, Rect drawableBounds, MotionEvent event);
+
 }

@@ -1,6 +1,5 @@
 package cc.brainbook.compounddrawable.app;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
@@ -15,7 +14,6 @@ import cc.brainbook.compounddrawable.CompoundDrawableTouchListener;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "TAG";
 
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 switch(drawableIndex) {
                     case CompoundDrawableTouchListener.LEFT:
                         // Todo ...
-                        Log.d(TAG, "onDrawableClick: CompoundDrawableTouchListener.LEFT: ");
+                        Log.d(TAG, "TextView# onDrawableClick: CompoundDrawableTouchListener.LEFT: ");
                         break;
                 }
             }
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 switch(drawableIndex) {
                     case CompoundDrawableTouchListener.LEFT:
                         // Todo ...
-                        Log.d(TAG, "onDrawableClick: CompoundDrawableTouchListener.LEFT: ");
+                        Log.d(TAG, "CheckedTextView# onDrawableClick: CompoundDrawableTouchListener.LEFT: ");
                         break;
                 }
             }
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 switch(drawableIndex) {
                     case CompoundDrawableTouchListener.LEFT:
                         // Todo ...
-                        Log.d(TAG, "onDrawableClick: CompoundDrawableTouchListener.LEFT: ");
+                        Log.d(TAG, "EditText# onDrawableClick: CompoundDrawableTouchListener.LEFT: ");
                         break;
                 }
             }

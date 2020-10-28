@@ -4,11 +4,12 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+
 /**
  * Handles compound drawable click events.
  *
  * https://gist.github.com/amaksoft/dbfb0fa827619dcb64b6a587efde34d9
- * https://code.i-harness.com/en/q/363c49
  */
 @SuppressWarnings("WeakerAccess")
 public abstract class CompoundDrawableClickListener extends CompoundDrawableTouchListener {
@@ -30,11 +31,11 @@ public abstract class CompoundDrawableClickListener extends CompoundDrawableTouc
     }
 
     @Override
-    protected boolean onDrawableTouch(View v, int drawableIndex, Rect drawableBounds, MotionEvent event) {
+    protected boolean onDrawableTouch(View v, int drawableIndex, Rect drawableBounds, @NonNull MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_UP) {
             onDrawableClick(v, drawableIndex);
         }
-        return true; 
+        return true;
     }
 
     /**
@@ -44,4 +45,5 @@ public abstract class CompoundDrawableClickListener extends CompoundDrawableTouc
      * @param drawableIndex index of compound drawable which received the event
      */
     protected abstract void onDrawableClick(View v, int drawableIndex);
+
 }
