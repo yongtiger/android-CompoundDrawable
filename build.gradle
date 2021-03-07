@@ -4,14 +4,14 @@ buildscript {
     ext {
         setup = [
                 compileSdk : 30,
-                buildTools : "30.0.0",
+                buildTools : "30.0.3",
                 minSdk     : 15,
                 targetSdk  : 30
         ]
 
         release = [
-                versionName: "1.0.2",   ///v1.0.2#update gradle
-                versionCode: 10002
+                versionName: "1.0.3",   ///v1.0.3#update gradle
+                versionCode: 10003
         ]
     }
 
@@ -20,7 +20,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:4.1.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'    ///jitpack
 
         // NOTE: Do not place your application dependencies here; they belong
