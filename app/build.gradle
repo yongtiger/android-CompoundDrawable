@@ -11,7 +11,6 @@ android {
         versionCode release.versionCode
         versionName release.versionName
 
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -33,6 +32,6 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
 
 }
